@@ -28,5 +28,7 @@ This has only been tested in macOS Firefox/Chrome/Safari and iOS Safari.
 ## TODO
 - Add "Leave" functionality + handle ICE candidate disconnections (rather than just closing the browser window)
 
-## License
-Copyright © 2021+ Dom Christie and released under the MIT license.
+## REFERENCES
+Go to [references](./REFERENCES.md)
+
+

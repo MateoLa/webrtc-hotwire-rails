@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html, body {
+  height: 100%
+ }
+
+ body {
+  margin: 0;
+ }
+
+.room,
+.media {
+  height: 100%;
+ }
+
+ .media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(50%, 1fr));
+ }
+
+ .medium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+.medium video {
+  display: block;
+  height: 100%;
+  max-width: 100%;
+}
+
+ .medium--local video {
+  transform: scaleX(-1);
+ }
+
+ .medium-actions {
+   position: absolute;
+   top: 0;
+   left: 0;
+ }

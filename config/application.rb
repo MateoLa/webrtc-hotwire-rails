@@ -18,6 +18,6 @@ module WebrtcHotwireRails
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.web_console.permissions = '192.168.0.0/16'
+    config.web_console.permissions = ["192.168.0.0/16", "172.18.0.0/16"]
   end
 end

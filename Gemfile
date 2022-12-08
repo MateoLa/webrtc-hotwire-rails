@@ -5,6 +5,10 @@ ruby '3.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.0'
+
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+
 # Use pg as the database for Active Record
 gem 'pg', '~> 1.4'
 # Use Puma as the app server

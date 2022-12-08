@@ -24,7 +24,7 @@ ENV LANG=C.UTF-8 \
 ENV PATH="${BUNDLE_BIN}:${PATH}"
 
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler -v 2.3.12
+RUN gem install bundler -v 2.3.23
 
 EXPOSE 3000
 CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]

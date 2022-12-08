@@ -24,6 +24,8 @@ export default class RoomController extends Controller {
     this.client.on('iceConnection:checking', ({ detail: { otherClient } }) => {
       this.startStreamingTo(otherClient)
     })
+    console.log("Conected to room: " + this.idValue);
+    console.log("Clenen id: " + this.client.id);
   }
 
   async enter () {
@@ -124,6 +126,7 @@ export default class RoomController extends Controller {
 
   roomPinged (data) {
     this.greetNewClient(data)
+    console.log(data);
   }
 
   // Signaler Delegate

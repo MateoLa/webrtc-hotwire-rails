@@ -1,7 +1,9 @@
 # WebRTC + Hotwire + Ruby on Rails
+
 An basic video chat app using the [WebRTC Perfect Negotiation pattern](https://w3c.github.io/webrtc-pc/#perfect-negotiation-example), a sprinkling of Hotwire (mainly [Turbo Streams](https://turbo.hotwire.dev/reference/streams) & [Stimulus](https://stimulus.hotwire.dev/)), and backed by Ruby on Rails.
 
 ## How does it work?
+
 The Stimulus room controller handles Enter button click. It gets the user's local audio and video and feeds them into the local video element. It also starts Action Cable subscriptions specific to the current room: one for communicating WebRTC messages: the `Signaller`; and one for clients to ping others: the `RoomSubscription`. Once connected, the room channel broadcasts the presence of this new client. Each connected client then "greets" this newcomer by calling the `greet` action on the room channel and specifying `to` and `from` fields.
 
 The `greet` action broadcasts specifically to the newcomer, a Turbo Stream update which appends a media element representing the remote client. It's important we do this first so that it's ready for incoming streams. The medium controller messages the room controller to notify that it has been added. This begins the WebRTC negotiation to form a connection between the two clients.
@@ -14,6 +16,9 @@ Finally, when a client disconnects from the room channel, a Turbo Stream update 
 
 To summarise the flow:
 
+a. Open a web browser and create a new room.
+b. Open another browser and go to the same room url created in the step above.
+
 1. A newcomer broadcasts its presence to others in the room
 2. The connected clients greet this newcomer letting them know their ID
 3. A Turbo Stream update creates a video element on the newcomer's screen for each greeting it receives
@@ -23,12 +28,13 @@ To summarise the flow:
 7. Reacting to negotiation activity (SDP descriptions and ICE candidate exchanges), the newcomer starts streaming to other clients
 
 ## Browser Support?
+
 This has only been tested in macOS Firefox/Chrome/Safari and iOS Safari.
 
 ## TODO
+
 - Add "Leave" functionality + handle ICE candidate disconnections (rather than just closing the browser window)
 
 ## REFERENCES
+
 Go to [references](./REFERENCES.md)
-
-

@@ -16,9 +16,6 @@ Finally, when a client disconnects from the room channel, a Turbo Stream update 
 
 To summarise the flow:
 
-a. Open a web browser and create a new room.
-b. Open another browser and go to the same room url created in the step above.
-
 1. A newcomer broadcasts its presence to others in the room
 2. The connected clients greet this newcomer letting them know their ID
 3. A Turbo Stream update creates a video element on the newcomer's screen for each greeting it receives
@@ -30,6 +27,15 @@ b. Open another browser and go to the same room url created in the step above.
 ## Browser Support?
 
 This has only been tested in macOS Firefox/Chrome/Safari and iOS Safari.
+
+### Testing
+
+1. Open a browser and create a new room.
+2. Open another browser and go to the same room (copy the url created in the previous step).
+
+In most operating system, two different processes can not have the camera open at the same time. <br> 
+One straightforward option is to buy multiple cameras or in Firefox you can use ```media.navigator.streams.fake``` (in about:config) or you can launch Chrome from console whith ```chromium --use-fake-device-for-media-stream ``` <br>
+Both cases simulates a video stream that you going to see in the respective windows (local and remote).
 
 ## TODO
 

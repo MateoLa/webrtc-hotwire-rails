@@ -34,7 +34,7 @@ This has only been tested in macOS Firefox/Chrome/Safari and iOS Safari.
 2. Open another browser and go to the same room (copy the url created in the previous step).
 
 In most operating system, two different processes can not have the camera open at the same time. <br> 
-One straightforward option is to buy multiple cameras or in Firefox you can use ```media.navigator.streams.fake``` (in about:config) or you can launch Chrome from console whith ```chromium --use-fake-device-for-media-stream ``` <br>
+One straightforward option is to buy multiple cameras or in Firefox you can use ```media.navigator.streams.fake``` (in about:config) or you can launch Chrome from console whith ```chromium --use-fake-device-for-media-stream``` <br>
 Both cases simulates a video stream that you going to see in the respective windows (local and remote).
 
 ## TODO

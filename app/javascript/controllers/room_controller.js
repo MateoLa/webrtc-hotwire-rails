@@ -25,7 +25,7 @@ export default class RoomController extends Controller {
       this.startStreamingTo(otherClient)
     })
     console.log("Conected to room: " + this.idValue);
-    console.log("Clenen id: " + this.client.id);
+    console.log("Client id: " + this.client.id);
   }
 
   async enter () {
